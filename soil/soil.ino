@@ -44,6 +44,7 @@ void loop() {
   Serial.println("DONE");
   soiltempf = sensors.getTempFByIndex(DEVICE_INDEX);
   rawsoilmoisture = analogRead(A0);
+  soilmoisture = (rawsoilmoisture / 1024) * 100;
   //Send data to Weather Underground
   Serial.print("connecting to ");
   Serial.println(server);
